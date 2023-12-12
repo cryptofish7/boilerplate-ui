@@ -1,0 +1,22 @@
+# version: 0.2
+
+# env:
+#   git-credential-helper: yes
+
+# phases:
+#   install:
+#     on-failure: ABORT
+#     runtime-versions:
+#       nodejs: 18.x
+#   build:
+#     on-failure: ABORT
+#     commands:
+#       - npm install -g yarn
+#       - yarn
+#       - export REACT_APP_SENTRY_RELEASE=$SENTRY_RELEASE
+#       - npm run build
+#       - aws s3 cp build s3://$BUILD_BUCKET_ARTIFACTS/$ENVIRONMENT-$CODEBUILD_BUILD_NUMBER --recursive
+#       - git tag $ENVIRONMENT-$CODEBUILD_BUILD_NUMBER
+#       - git push --tags
+#     finally:
+#       - bin/discord.sh

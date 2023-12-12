@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "sourceMap": true,
+    "inlineSources": true,
+    "sourceRoot": "/",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "strict": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["jest"],
+    "baseUrl": "src"
+  },
+  "exclude": ["node_modules", "cypress"],
+  "include": [
+    "src",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "jest-environment-jsdom.js"
+  ]
+}

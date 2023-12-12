@@ -1,0 +1,64 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "ignorePatterns": ["node_modules/**/*"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "simple-import-sort",
+    "sort-keys-fix",
+    "typescript-sort-keys",
+    "sort-destructure-keys"
+  ],
+  "rules": {
+    "sort-imports": "off",
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error",
+    "sort-keys-fix/sort-keys-fix": "error",
+    "typescript-sort-keys/interface": [
+      "error",
+      "asc",
+      {
+        "caseSensitive": false,
+        "natural": true,
+        "requiredFirst": true
+      }
+    ],
+    "typescript-sort-keys/string-enum": [
+      "error",
+      "asc",
+      {
+        "caseSensitive": false,
+        "natural": true
+      }
+    ],
+    "sort-destructure-keys/sort-destructure-keys": [
+      "error",
+      {
+        "caseSensitive": false
+      }
+    ],
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "warn"
+  }
+}

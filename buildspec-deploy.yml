@@ -1,0 +1,16 @@
+# version: 0.2
+
+# phases:
+#   build:
+#     on-failure: ABORT
+#     commands:
+#       - GIT_TAG=${GIT_TAG:-$(echo $CODEBUILD_WEBHOOK_TRIGGER | awk -F/ {'print $2'})}
+#       - bin/validate-git-tag.sh
+#       - NOW=$(date +%s)
+#       - aws s3 rm s3://$DEPLOYMENT_BUCKET/ --recursive
+#       - aws s3 cp s3://$BUILD_BUCKET_ARTIFACTS/$GIT_TAG s3://$DEPLOYMENT_BUCKET --exclude "*.map" --exclude "*.svg" --recursive
+#       - aws s3 cp s3://$BUILD_BUCKET_ARTIFACTS/$GIT_TAG s3://$DEPLOYMENT_BUCKET --metadata-directive=REPLACE --cache-control "max-age=31536000" --content-type="image/svg+xml" --exclude "*" --include "*.svg" --recursive
+#       - sed -e "s|%GIT_TAG%|$GIT_TAG|" -e "s|%NOW%|$NOW|" cache-invalidation.json.tpl > cache-invalidation.json
+#       - aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --invalidation-batch file://cache-invalidation.json
+#     finally:
+#       - bin/discord.sh
